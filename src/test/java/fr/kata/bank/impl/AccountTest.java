@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import fr.kata.bank.exception.NegativeNumberException;
@@ -12,8 +13,11 @@ public class AccountTest {
 
 	private Account myAccount;
 
+	@BeforeEach
+	void createAccount() {
+		myAccount = new Account();
+	}
 	
-
 	@Test
 	void testDeposit() throws NegativeNumberException {
 		myAccount.deposit(100);
