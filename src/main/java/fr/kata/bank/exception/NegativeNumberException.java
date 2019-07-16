@@ -1,8 +1,12 @@
-package fr.kata.bank;
+package fr.kata.bank.exception;
 
-public class NegativeNumberException  extends RuntimeException {
+public class NegativeNumberException  extends Exception {
 
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String message;
 	
 	public String getMessage() {

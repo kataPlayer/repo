@@ -1,32 +1,18 @@
-package fr.kata.bank;
+package fr.kata.bank.impl;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStream;
-import java.io.PrintStream;
-import java.util.Date;
 
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import fr.kata.bank.exception.NegativeNumberException;
 
 public class AccountTest {
 
 	private Account myAccount;
-	private static OutputStream outContent;
 
-	@BeforeEach
-	void createAccount() {
-		myAccount = new Account();
-	}
-
-	@BeforeAll
-	static void prepareSystemOutAccount() {
-		outContent = new ByteArrayOutputStream();
-		System.setOut(new PrintStream(outContent));
-	}
+	
 
 	@Test
 	void testDeposit() throws NegativeNumberException {
@@ -63,15 +49,6 @@ public class AccountTest {
 		assertEquals(-405.50, myAccount.getBalance());
 	}
 
-	@Test
-	void testPrint() throws NegativeNumberException {
-		myAccount.deposit(100);
-		String expectedOutput = AccountUtils.createStatement(new Date(), OperationType.Deposit.toString(),
-				Double.valueOf(100));
-		expectedOutput += "\r\n";
-		myAccount.printStatement();
-		assertEquals(expectedOutput, outContent.toString());
-
-	}
+	
 
 }
