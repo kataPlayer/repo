@@ -5,7 +5,6 @@ import java.util.List;
 
 import fr.kata.bank.print.BankPrinterInterface;
 import fr.kata.bank.print.impl.BankPrinter;
-import fr.kata.bank.utils.OperationType;
 
 public class Operation {
 

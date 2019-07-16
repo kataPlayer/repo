@@ -1,4 +1,4 @@
-package fr.kata.bank.utils;
+package fr.kata.bank.impl;
 
 public enum OperationType {
 

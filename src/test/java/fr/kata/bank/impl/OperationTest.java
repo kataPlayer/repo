@@ -13,7 +13,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import fr.kata.bank.exception.NegativeNumberException;
-import fr.kata.bank.utils.OperationType;
 
 public class OperationTest {
 	
